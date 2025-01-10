@@ -31,6 +31,14 @@ class Discretize
 
     private function equalFrequency(): Array
     {
-        return array_combine(['high', 'medium', 'low'], array_reverse(array_chunk($this->data, 3)));
+        return array_combine(
+            ['high', 'medium', 'low'],
+            array_reverse(
+                array_chunk(
+                    $this->data,
+                    ceil(count($this->data) / 3)
+                )
+            )
+        );
     }
 }
