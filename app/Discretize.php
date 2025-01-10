@@ -23,9 +23,24 @@ class Discretize
         $binWidth = (end($this->data) - $this->data[0]) / 3;
 
         return [
-            'high' => array_filter($this->data, fn($n) => ($n >= $binWidth * 2 && $n <= end($this->data))),
-            'medium' => array_filter($this->data, fn($n) => ($n >= $binWidth && $n < $binWidth * 2)),
-            'low' => array_filter($this->data, fn($n) => ($n >= $this->data[0] && $n < $binWidth)),
+            'high' => array_values(
+                array_filter(
+                    $this->data,
+                    fn($n) => ($n >= $binWidth * 2 && $n <= end($this->data))
+                )
+            ),
+            'medium' => array_values(
+                array_filter(
+                    $this->data,
+                    fn($n) => ($n >= $binWidth && $n < $binWidth * 2)
+                )
+            ),
+            'low' => array_values(
+                array_filter(
+                    $this->data,
+                    fn($n) => ($n >= $this->data[0] && $n < $binWidth)
+                )
+            ),
         ];
     }
 
