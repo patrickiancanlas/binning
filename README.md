@@ -1,6 +1,6 @@
 How to run:
 
-1. Install DDEV: https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/
+1. Install DDEV: https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#macos
 2. Run `ddev start`
 3. To run the app, run `ddev php binning app:discretize`
 4. Input the data set
