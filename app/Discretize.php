@@ -9,7 +9,7 @@ class Discretize
         sort($this->data, SORT_NUMERIC);
     }
 
-    private function run()
+    public function run()
     {
         if ($this->filterType == 'equalWidth') {
             return $this->equalWidth();
